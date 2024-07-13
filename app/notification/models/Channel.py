@@ -8,4 +8,5 @@ class Channel(models.TextChoices):
     EMAIL = "EMAIL"
     SMS = "SMS"
     WHATSAPP = "WHATSAPP"
+    PUSH = "PUSH"
 

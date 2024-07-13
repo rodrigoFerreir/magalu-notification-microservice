@@ -17,6 +17,8 @@ class NotificationSerializer():
             "type": notification.type_task,
             "execution_date": notification.execution_date,
             "status":notification.status,
+            "created_at": notification.created_at,
+            "updated_at": notification.updated_at,
             "contact": {
                 "id": notification.contact.id,
                 "name": notification.contact.name,
