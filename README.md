@@ -31,7 +31,7 @@ Funcionalidade de cancelamento de agendamento de notificação:
 - [x]  Testar a API
 
 Rotina de checagem e envio de notificação:
-- [x]  Criar rotina de checagem via Spring Scheduler
+- [x]  Criar rotina de checagem via Celery
 - [x]  Testar se a rotina está funcionado
 - [x]  Criar serviço de consulta de notificações disponíveis para envio
 - [x]  Criar serviço que atualiza o status da notificação
