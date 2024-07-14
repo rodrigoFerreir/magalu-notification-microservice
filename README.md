@@ -35,7 +35,7 @@ Rotina de checagem e envio de notificação:
 - [x]  Testar se a rotina está funcionado
 - [x]  Criar serviço de consulta de notificações disponíveis para envio
 - [x]  Criar serviço que atualiza o status da notificação
-- [x]  Testar o fluxo completo (api → agendamento → rotina → envia notificacao → atualiza base)
+- [x]  Testar o fluxo completo (api → agendamento → rotina → envia notificaçãos → atualiza base)
 
 # run docker services
 `docker-compose up`
