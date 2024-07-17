@@ -25,9 +25,7 @@ services:
       - "5672:5672"
   
   app:
-    build:
-      context: .
-      dockerfile: app/DockerFile
+    image: rodrigoferreir/ms-magalu-send-email:v1
     container_name: app-magalu-ms
     env_file:
       - ./enviroment-files/.env
