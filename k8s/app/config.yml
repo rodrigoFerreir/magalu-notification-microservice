@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: secret-app-magalu-ms
+  labels:
+    app: app-magalu-ms
+data:
+  SECRET_KEY: "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gRHVpcyBldCBsaWJlcm8gY29uc2VjdGV0dXIgbG9y"
+  DEBUG: "1"
+  CELERY: "FALSE"
+  BROKER_ULR: "amqp://guest:guest@rabbitmq:5672/celery"
+  POSTGRES_DB: "magalu_ms_dev"
+  POSTGRES_USER: "postgres"
+  POSTGRES_PASSWORD: "P@ostgResMagaluDev"
+  POSTGRES_HOST: "postgres"
+  POSTGRES_PORT: "5432"
+  PGDATA: "/data/postgres"

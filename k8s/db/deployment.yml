@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-db-magalu-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-db-magalu-ms
+  template:
+    metadata:
+      labels:
+        app: postgres-db-magalu-ms
+    spec:
+      containers:
+        - name: postgres-db-magalu-ms
+          image: postgres
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres-db-magalu-ms-secret
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresdata
+      volumes:
+        - name: postgresdata
+          persistentVolumeClaim:
+            claimName: pvc-postgres-db-magalu-ms

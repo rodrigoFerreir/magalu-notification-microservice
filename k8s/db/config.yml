@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: secret-postgres-db-magalu-ms
+  labels:
+    app: postgres-db-magalu-ms
+data:
+  POSTGRES_DB: "magalu_ms_dev"
+  POSTGRES_USER: "postgres"
+  POSTGRES_PASSWORD: "P@ostgResMagaluDev"
+  POSTGRES_PORT: "5432"
+  PGDATA: "/data/postgres"

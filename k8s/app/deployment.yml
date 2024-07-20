@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+
+#Qual tipo de objeto pretende criar.
+kind: Deployment
+
+#Dados que ajudam a identificar de forma única o objeto, incluindo uma string nome, UID e um namespace
+metadata:
+  name: app-magalu-ms
+
+#Que estado deseja para o objeto.
+spec:
+  selector:
+    matchLabels:
+      app: app-magalu-ms
+  replicas: 2 # diz ao deployment para executar 2 pods que correspondam ao modelo
+  revisionHistoryLimit: 0 #quantos replicaset antigos deve ser mantidos
+  template:
+    metadata:
+      labels:
+        app: app-magalu-ms
+    spec:
+      volumes:
+        - name: app-magalu-ms-data
+          persistentVolumeClaim:
+            claimName: app-magalu-ms-pvc
+      containers:
+      - name: app-magalu-ms
+        imagePullPolicy: Always
+        image: rodrigoferreir/ms-magalu-send-email:v1
+        ports:
+        - containerPort: 8000
+        envFrom:
+          - configMapRef:
+              name: secret-app-magalu-ms

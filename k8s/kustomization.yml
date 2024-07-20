@@ -1,0 +1,21 @@
+#### Install kustomize
+## curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- namespace.yml
+#
+- db/config.yml
+- db/volume.yml
+- db/deployment.yml
+- db/service.yml
+##
+- app/config.yml
+- app/volume.yml
+- app/deployment.yml
+- app/service.yml
+
+##
+- broker/deployment.yml

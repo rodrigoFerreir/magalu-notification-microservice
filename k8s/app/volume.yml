@@ -1,0 +1,32 @@
+
+---
+# PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app-magalu-ms-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /app/
+
+
+---
+#PVC
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app-magalu-ms-pvc
+  labels:
+    app: django
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
