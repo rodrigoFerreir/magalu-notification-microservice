@@ -43,3 +43,6 @@ Rotina de checagem e envio de notificação:
 # run celery
 `app/entrypoint-celery.sh `
 
+# run app in kubernet cluster
+`kubectl apply -k k8s/`
+
