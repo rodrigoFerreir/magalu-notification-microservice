@@ -19,7 +19,7 @@ jobs:
       # Build the Docker image
       - name: Build image Docker
         run: | 
-          docker build -t rodrigoferreir/ms-magalu-send-email:${{ github.sha }}  .
+          docker build -t rodrigoferreir/ms-magalu-send-email:${{ github.sha }}  ./add/
 
       #Push the image to DockerHub
       - name: Push the image to DockerHub
