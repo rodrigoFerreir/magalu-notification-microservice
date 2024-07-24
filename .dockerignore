@@ -12,6 +12,7 @@
 .idea/workspace.xml
 .DS_Store
 .git/
+.github/
 .sass-cache
 .vagrant/
 __pycache__
@@ -28,3 +29,5 @@ web/static/CACHE
 stats
 Dockerfile
 celerybeat-schedule
+k8s
+data

@@ -6,7 +6,7 @@ services:
     image: postgres
     container_name: postgres-db-magalu-ms
     volumes:
-      - ./data/postgres/data:/data/postgres
+      - ./data/postgres/data:/data/postgres:rw
     env_file:
       - ./enviroment-files/.env
     ports:

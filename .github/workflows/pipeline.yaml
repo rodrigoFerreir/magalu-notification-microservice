@@ -1,5 +1,10 @@
 name: Pipeline
-on: [push, pull_request]
+on: 
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
@@ -19,7 +24,7 @@ jobs:
       # Build the Docker image
       - name: Build image Docker
         run: | 
-          docker build -t rodrigoferreir/ms-magalu-send-email:${{ github.sha }}  ./add/
+          docker build -t rodrigoferreir/ms-magalu-send-email:${{ github.sha }} ./app/
 
       #Push the image to DockerHub
       - name: Push the image to DockerHub
