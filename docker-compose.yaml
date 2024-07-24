@@ -3,7 +3,7 @@
 
 services:
   postgres:
-    image: postgres
+    image: postgres:15-alpine3.17
     container_name: postgres-db-magalu-ms
     volumes:
       - ./data/postgres/data:/data/postgres:rw
